@@ -1,8 +1,32 @@
 // src/pages/Claim.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Claim() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate server check
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // 3 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+        <div className="text-center">
+          <div className="text-green-700 text-2xl font-semibold mb-4 animate-pulse">
+            Checking server...
+          </div>
+          <div className="loader border-4 border-green-700 border-t-transparent rounded-full w-12 h-12 mx-auto animate-spin"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="bg-white p-8 md:p-12 rounded-xl shadow-xl max-w-3xl w-full text-center flex flex-col md:flex-row items-center justify-between gap-6">
