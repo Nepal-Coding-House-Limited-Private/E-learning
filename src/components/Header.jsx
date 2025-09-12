@@ -13,7 +13,7 @@ function Header() {
           {/* Phone: always visible */}
           <div className="flex items-center gap-1">
             <PhoneIcon className="w-4 h-4" />
-            <span className='text-[#17px]'>+977 9812345678</span>
+            <span className='text-[#17px]'>+977 9808370638</span>
           </div>
 
           {/* Divider and email: visible only on desktop */}
