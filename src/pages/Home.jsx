@@ -6,17 +6,17 @@ const courses = [
   {
     name: "Web Development",
     description: "Learn HTML, CSS, JavaScript, React, and build real projects.",
-    url: "https://yourdomain.com/courses/web-development",
+    url: "https://elearningnepalcodinghouse.netlify.app/courses/web-development",
   },
   {
     name: "Python Programming",
     description: "Master Python basics, data analysis, and automation.",
-    url: "https://yourdomain.com/courses/python-programming",
+    url: "https://elearningnepalcodinghouse.netlify.app/courses/python-programming",
   },
   {
     name: "App Development",
     description: "Create Android and iOS apps using Java, Kotlin, and Flutter.",
-    url: "https://yourdomain.com/courses/app-development",
+    url: "https://elearningnepalcodinghouse.netlify.app/courses/app-development",
   },
 ];
 
@@ -24,8 +24,8 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "Nepal Coding House",
-  "url": "https://yourdomain.com",
-  "logo": "https://yourdomain.com/logo.png",
+  "url": "https://elearningnepalcodinghouse.netlify.app/",
+  "logo": "https://elearningnepalcodinghouse.netlify.app/logo.png",
   "sameAs": [
     "https://facebook.com/yourpage",
     "https://twitter.com/yourhandle"
@@ -52,16 +52,16 @@ function Home() {
         <meta property="og:title" content="Nepal Coding House | Learn Coding the Right Way" />
         <meta property="og:description" content="Explore coding courses in Nepal. Learn React, Python, and App Development the right way." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/" />
-        <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+        <meta property="og:url" content="https://elearningnepalcodinghouse.netlify.app/" />
+        <meta property="og:image" content="https://elearningnepalcodinghouse.netlify.app/og-image.jpg" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Nepal Coding House | Learn Coding the Right Way" />
         <meta name="twitter:description" content="Explore coding courses in Nepal. Learn React, Python, and App Development the right way." />
-        <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://elearningnepalcodinghouse.netlify.app/og-image.jpg" />
 
-        <link rel="canonical" href="https://yourdomain.com/" />
+        <link rel="canonical" href="https://elearningnepalcodinghouse.netlify.app/" />
 
         {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
