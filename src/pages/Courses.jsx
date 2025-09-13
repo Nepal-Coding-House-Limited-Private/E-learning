@@ -1,6 +1,7 @@
 // src/pages/Courses.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const courses = [
   {
@@ -48,13 +49,58 @@ const courses = [
   },
 ];
 
+// Structured Data JSON-LD
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Nepal Coding House",
+  "url": "https://elearningnepalcodinghouse.netlify.app/courses",
+  "logo": "https://elearningnepalcodinghouse.netlify.app/logo.png",
+  "sameAs": [
+    "https://facebook.com/yourpage",
+    "https://twitter.com/yourhandle"
+  ],
+  "hasCourse": courses.map(course => ({
+    "@type": "Course",
+    "name": course.title,
+    "description": course.description,
+    "url": `https://elearningnepalcodinghouse.netlify.app${course.path}`
+  }))
+};
+
 function Courses() {
   return (
     <div className="font-inter bg-white text-gray-800">
+
+      {/* ✅ SEO */}
+      <Helmet>
+        <title>Courses | Nepal Coding House - Learn Web, Python, App & More</title>
+        <meta name="description" content="Explore our coding courses including Web Development, Python, App Development, Data Science, UI/UX Design, and Cybersecurity. Learn with real projects in Nepal." />
+        <meta name="keywords" content="Nepal Coding House, Web Development, Python, App Development, Data Science, UI/UX Design, Cybersecurity, Learn Coding Nepal" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Courses | Nepal Coding House - Learn Web, Python, App & More" />
+        <meta property="og:description" content="Explore our coding courses including Web Development, Python, App Development, Data Science, UI/UX Design, and Cybersecurity." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://elearningnepalcodinghouse.netlify.app/courses" />
+        <meta property="og:image" content="https://elearningnepalcodinghouse.netlify.app/og-image.jpg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Courses | Nepal Coding House - Learn Web, Python, App & More" />
+        <meta name="twitter:description" content="Explore our coding courses including Web Development, Python, App Development, Data Science, UI/UX Design, and Cybersecurity." />
+        <meta name="twitter:image" content="https://elearningnepalcodinghouse.netlify.app/og-image.jpg" />
+
+        <link rel="canonical" href="https://elearningnepalcodinghouse.netlify.app/courses" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      </Helmet>
+
       {/* Page Header */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
             <span className="text-[#0D7332]">Innovative</span> Projects
             <br />
             <span className="text-2xl md:text-5xl font-semibold text-gray-700">
@@ -80,7 +126,6 @@ function Courses() {
                 <h2 className="text-2xl font-semibold mb-2">{course.title}</h2>
                 <p className="text-gray-600 mb-4">{course.description}</p>
 
-                {/* Price Section */}
                 {course.price && course.cutprice && (
                   <div className="mb-4">
                     <span className="text-green-700 font-bold text-lg">
